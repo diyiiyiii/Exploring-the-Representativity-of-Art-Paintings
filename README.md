@@ -16,15 +16,18 @@ Yingying Deng, Fan Tang, Weiming Dong, Chongyang Ma, Feiyue Huang,  Oliver Deuss
 ### Style-Enhanced Art Paintings Representation
 #### Training 
 
-We only need to train the artist classification model to obtain image features. Dataset is collected from [WIKIART](https://www.wikiart.org/)
-You can download the pretrained [resnet and vgg model](https://drive.google.com/file/d/15IIETn17Xgg9TpYacymWPv0NxqEHJMTt/view?usp=sharing)
+The training dataset is collected from [WIKIART](https://www.wikiart.org/)
+You can download the pretrained [resnet and vgg](https://drive.google.com/file/d/15IIETn17Xgg9TpYacymWPv0NxqEHJMTt/view?usp=sharing)model.
 ```
 python resnet_finetune_unify.py
 ```
 #### Testing 
-You can download our pretrained [artist classification model](https://drive.google.com/file/d/1HHfg5a_4SHiH6FQAIvH9VXGwJld2HamS/view?usp=sharing) 
+You can download our pretrained [artist classification](https://drive.google.com/file/d/1HHfg5a_4SHiH6FQAIvH9VXGwJld2HamS/view?usp=sharing) model to obtain image features directly.
+```
+python feature_generation.py
+```
 ### Graph-Based Representativity Learning
-If you just need calculate the representivity, you shoud download [KPL files](https://drive.google.com/file/d/1BSW9W1Qb6MDMiFiHMXevqzBFTNd_bEGB/view?usp=sharing) 
+If you just need calculate the representivity, you shoud download [KPL](https://drive.google.com/file/d/1BSW9W1Qb6MDMiFiHMXevqzBFTNd_bEGB/view?usp=sharing) files.
 ```
 python anchor.py
 ```
