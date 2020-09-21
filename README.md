@@ -11,7 +11,7 @@ Yingying Deng, Fan Tang, Weiming Dong, Chongyang Ma, Feiyue Huang,  Oliver Deuss
 ## Experiment
 ### Requirements
 * python 3.6
-* pytorch 1.3.0
+* tensorflow 1.3.0
  
 ### Style-Enhanced Art Paintings Representation
 #### Training 
