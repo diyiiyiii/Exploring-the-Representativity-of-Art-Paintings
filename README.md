@@ -4,40 +4,40 @@ Yingying Deng, Fan Tang, Weiming Dong, Chongyang Ma, Feiyue Huang,  Oliver Deuss
 
 ## results presentation 
 <p align="center">
-<img src="https://github.com/diyiiyiii/Arbitrary-Style-Transfer-via-Multi-Adaptation-Network/blob/master/framework/results1.png" width="50%" height="50%">
+<img src="https://github.com/diyiiyiii/Exploring-the-Representativity-of-Art-Paintings/blob/master/image/1.png" width="100%" height="100%">
 </p>
-Stylized result using Claude Monet's painting as style reference. Compared with some state-of-the-art algorithms, our result can preserve detailed content structures and maintain vivid style patterns.  <br>
-
-
-## Framework
-<p align="center">
-<img src="https://github.com/diyiiyiii/Arbitrary-Style-Transfer-via-Multi-Adaptation-Network/blob/master/framework/framework1.png" width="80%" height="80%">
-</p> 
-System overview. For the purpose of arbitrary style transfer, we propose a feed-forward network, which contains an encoder-decoder architecture and a multi-adaptation module.
-
-
-<p align="center">
-<img src="https://github.com/diyiiyiii/Arbitrary-Style-Transfer-via-Multi-Adaptation-Network/blob/master/framework/SACA1.png" width="80%" height="80%">
-</p> 
-The multi-adaptation module is divided into three parts: position-wise content SA module, channel-wise style SA module, and CA module.  <br>
-
+(a)Paintings sorted according to representativity value, from largest to smallest; (b) Famous works from artist’s homepage. Paintings enclosed in a yellow box are famous works reserved for verifying the accuracy of our method; representativity of paintings against the blue background ranges from 0:6 to 1:0, representativity of paintings against the orange background ranges from 0:0 to 0:4. <br>
 
 ## Experiment
 ### Requirements
 * python 3.6
-* pytorch 1.4.0
-* PIL, numpy, scipy
-* tqdm  <br> 
+* pytorch 1.3.0
+ 
+### Style-Enhanced Art Paintings Representation
+#### Training 
 
-### Testing 
+We only need to train the artist classification model to obtain image features. Dataset is collected from [WIKIART](https://www.wikiart.org/)
+You can download the pretrained [resnet and vgg model](https://drive.google.com/file/d/15IIETn17Xgg9TpYacymWPv0NxqEHJMTt/view?usp=sharing)
+```
+python resnet_finetune_unify.py
+```
+#### Testing 
+You can download our pretrained [artist classification model](https://drive.google.com/file/d/1HHfg5a_4SHiH6FQAIvH9VXGwJld2HamS/view?usp=sharing) 
+### Graph-Based Representativity Learning
+If you just need calculate the representivity, you shoud download [KPL files](https://drive.google.com/file/d/1BSW9W1Qb6MDMiFiHMXevqzBFTNd_bEGB/view?usp=sharing) 
+```
+python anchor.py
+```
 
 
 ### Reference
-If you use our work in your research, please cite us using the following BibTeX entry ~ Thank you ^ . ^. Paper Link [pdf](https://arxiv.org/abs/2005.13219)<br> 
+If you use our work in your research, please cite us using the following BibTeX entry ~ Thank you ^ . ^. Paper Link [pdf](https://ieeexplore.ieee.org/abstract/document/9167477)<br> 
 ```
-@inproceedings{deng:2020:arbitrary,
-  title={Arbitrary Style Transfer via Multi-Adaptation Network},
-  author={Deng, Yingying and Tang, Fan and Dong, Weiming and Sun, Wen and Huang, Feiyue and Xu, Changsheng},
-  booktitle={Acm International Conference on Multimedia},
+@article{deng2020exploring,
+  title={Exploring the Representativity of Art Paintings},
+  author={Deng, Yingying and Tang, Fan and Dong, Weiming and Ma, Chongyang and Huang, Feiyue and Deussen, Oliver and Xu, Changsheng},
+  journal={IEEE Transactions on Multimedia},
   year={2020},
- publisher = {
+  publisher={IEEE}
+}
+```
